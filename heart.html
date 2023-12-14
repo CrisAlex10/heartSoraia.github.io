@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Heart for You</title>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: darkred;
+      color: violet;
+    }
+
+    #heart {
+      font-size: 400px;
+      color: red;
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function(){
+        var heart = $("#heart");
+        var isExpanded = false;
+
+        function heartbeat() {
+            if (isExpanded) {
+                heart.css("transform", "scale(1)");
+                isExpanded = false;
+            } else {
+                heart.css("transform", "scale(1.2)");
+                isExpanded = true;
+            }
+        }
+
+        setInterval(heartbeat, 800); // 800 milliseconds (0.8 seconds) interval
+        heart.click(function(){
+            alert("Love Youuuuu so sooooo much 🌹")
+        })
+    });
+  </script>
+</head>
+<body>
+    <p id="heart">&hearts;</p>
+</body>
+</html>
